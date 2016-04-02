@@ -41,4 +41,23 @@ You can also assign to matrices columns or rows
 
     a(1,:) = b
 
+To replace the first element of a vector or matrix - often used in neural network training - you can do the following:
+
+    % to replace a COLUMN
+    a = ones(2,3);
+    %   1 1 1
+    %   1 1 1
+    [zeros(size(a,1),1) a(:,2:end)]
+    %   0 1 1
+    %   0 1 1   
+
+    % to replace a ROW
+    a = ones(2,3);
+    %   1 1 1
+    %   1 1 1
+    [zeros(1,size(a,2)) ; a(2:end,:)]
+    %   0 0 0
+    %   1 1 1
+
+
 
